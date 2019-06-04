@@ -3,6 +3,20 @@ import PropTypes from 'prop-types';
 import './CommentSection.scss';
 
 const CommentSection = props => {
+
+		addNewComment = (event, index) => {
+			event.preventDefault();
+
+			const newComment = {
+				comment: this.state.comment
+			}
+			this.ListeningStateChangedEvent({
+				
+			})
+		}
+
+		
+
 	return (
 		<div>
 			<p>
@@ -11,6 +25,8 @@ const CommentSection = props => {
 		</div>
 	);
 };
+
+
 
 CommentSection.propTypes = {
 	text : PropTypes.string,

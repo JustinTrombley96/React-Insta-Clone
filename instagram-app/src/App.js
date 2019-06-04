@@ -5,12 +5,16 @@ import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 
 class App extends Component {
-	constructor() {
-		super();
-		this.state = {
+	state = {
+		data : [],
+	};
+
+	componentDidMount() {
+		this.setState({
 			data : dummyData,
-		};
+		});
 	}
+
 	render() {
 		return (
 			<div>

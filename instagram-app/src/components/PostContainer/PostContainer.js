@@ -5,32 +5,36 @@ import './PostContainer.scss';
 
 const PostContainer = props => {
 	return props.postcontainer.map(post => (
-		<div className='postContainer'>
-			<div className='postContainerTop'>
-				<div className='imgUser'>
-					<div className='imgTop'>
-						<img src={post.thumbnailUrl} alt='' />
+		<div className='container'>
+			<div className='postContainer'>
+				<div className='postContainerTop'>
+					<div className='imgUser'>
+						<div className='imgTop'>
+							<img src={post.thumbnailUrl} alt='' />
+						</div>
+						<h6>{post.username}</h6>
 					</div>
-					<h6>{post.username}</h6>
+					<i className='fas fa-ellipsis-h' />
 				</div>
-				<i className='fas fa-ellipsis-h' />
-			</div>
 
-			<img className='imageMid' src={post.imageUrl} alt='' />
-			<div className='imagesBottom'>
-				<div className='imagesLeft'>
-					<i className='far fa-heart' />
-					<i className='far fa-comment' />
-					<i className='far fa-share-square' />
+				<img className='imageMid' src={post.imageUrl} alt='' />
+				<div className='imagesBottom'>
+					<div className='imagesLeft'>
+						<i className='far fa-heart' />
+						<i className='far fa-comment' />
+						<i className='far fa-share-square' />
+					</div>
+					<div className='imagesRight'>
+						<i className='far fa-bookmark' />
+					</div>
 				</div>
-				<div className='imagesRight'>
-					<i className='far fa-bookmark' />
-				</div>
+				<h6>{post.likes} likes</h6>
+				{post.comments.map(comment => <CommentSection commentsection={comment} />)}
+				<p className='time'>{post.timestamp}</p>
+				<form onSubmit= {this.addNewComment}>
+					<input type='text' placeholder='Add a Comment...' />
+				</form>
 			</div>
-			<h6>{post.likes} likes</h6>
-			{post.comments.map(comment => <CommentSection commentsection={comment} />)}
-			<p className='time'>{post.timestamp}</p>
-			<input type='text' placeholder='Add a Comment...' />
 		</div>
 	));
 };
