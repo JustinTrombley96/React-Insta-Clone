@@ -31,9 +31,9 @@ const PostContainer = props => {
 				<h6>{post.likes} likes</h6>
 				{post.comments.map(comment => <CommentSection commentsection={comment} />)}
 				<p className='time'>{post.timestamp}</p>
-				<form onSubmit= {this.addNewComment}>
-					<input type='text' placeholder='Add a Comment...' />
-				</form>
+				{/* <form onSubmit= {this.addNewComment}> */}
+				<input type='text' placeholder='Add a Comment...' />
+				{/* </form> */}
 			</div>
 		</div>
 	));
