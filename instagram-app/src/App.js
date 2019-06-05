@@ -37,6 +37,7 @@ class App extends Component {
 					data={this.state.data}
 					filteredPosts={this.state.filteredPosts}
 					searchFilter={this.searchFilter}
+					likes={this.state.likes}
 				/>
 			</div>
 		);
