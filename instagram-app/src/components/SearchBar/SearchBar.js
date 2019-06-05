@@ -1,10 +1,21 @@
-import React from 'react';
 import './SearchBar.scss';
+import React, { Component } from 'react';
 
-const SearchBar = () => {
-	return (
-		<div>
-			<div className='navbar'>
+class SearchBar extends Component {
+	render() {
+		return (
+			<div>
+				<input name='search' onChange={this.props.searchFilter} placeholder='search...' type='text' />
+			</div>
+		);
+	}
+}
+
+SearchBar.propTypes = {};
+
+export default SearchBar;
+
+/* <div className='navbar'>
 				<div className='nav-left'>
 					<i className='fab fa-instagram' />
 					<div className='logo-text'>Instagram</div>
@@ -18,9 +29,4 @@ const SearchBar = () => {
 					<i className='far fa-user' />
 				</div>
 			</div>
-			<hr />
-		</div>
-	);
-};
-
-export default SearchBar;
+			<hr /> */

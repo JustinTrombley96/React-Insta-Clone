@@ -6,46 +6,38 @@ import PostContainer from './components/PostContainer/PostContainer';
 
 class App extends Component {
 	state = {
-		data     : [],
-		comments : this.state.comments,
-		id       : '',
-		username : 'MyZarZar',
-		text     : '',
+		data          : [],
+		filteredPosts : [],
 	};
+
+	changeHandler = e => {
+		this.setState({
+			[e.target.name]: e.target.value,
+		});
+	};
+
 	componentDidMount() {
 		this.setState({
 			data : dummyData,
 		});
 	}
 
-	handleChanges = event => {
-		this.setState({
-			[event.target.name]: event.target.value,
-		});
-	};
-
-	addComment = (event, index) => {
-		event.preventDefault();
-
-		const newComment = {
-			id       : this.state.id,
-			username : this.state.username,
-			text     : this.state.text,
-		};
-
-		this.setState({
-			comments : [ ...this.state.comments, newComment ],
-			id       : '',
-			username : 'MyZarZar',
-			text     : this.state.text,
-		});
+	searchFilter = e => {
+		const filtered = this.state.data.filter(post =>
+			post.username.toLowerCase().includes(e.target.value.toLowerCase()),
+		);
+		this.setState({ filteredPosts: filtered });
 	};
 
 	render() {
 		return (
-			<div>
-				<SearchBar />
-				<PostContainer postcontainer={this.state.data} />
+			<div className='App'>
+				<SearchBar newSearch={this.state.search} searchFilter={this.searchFilter} />
+				<PostContainer
+					data={this.state.data}
+					filteredPosts={this.state.filteredPosts}
+					searchFilter={this.searchFilter}
+				/>
 			</div>
 		);
 	}
