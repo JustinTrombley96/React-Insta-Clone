@@ -15,7 +15,9 @@ class SearchBar extends Component {
 				<div className='nav-right'>
 					<i className='far fa-compass' />
 					<i className='far fa-heart' />
-					<i className='far fa-user' />
+					<button>
+						<i className='far fa-user' />
+					</button>
 				</div>
 				<hr />
 			</div>

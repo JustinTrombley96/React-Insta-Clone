@@ -17,7 +17,6 @@ export class Post extends Component {
         const addLike = this.state.isLiked ? this.state.likes -1 : this.state.likes + 1;
 		this.setState({
 			isLiked : !this.state.isLiked,
-			// subtractLike: this.state.liked,
 			likes : addLike,
 		});
 	};
