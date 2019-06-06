@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import CommentSection from '../CommentSection/CommentSection'
+// import styled from 'styled-components'
 
+// const ImagesBottom = styled.div`
+//             display: flex;
+// 			justify-content: space-between;
+// `
 export class Post extends Component {
     state = {
 		isLiked : false,
@@ -32,7 +37,7 @@ export class Post extends Component {
             </header>
 
             <img src={post.imageUrl} alt={post.id} />
-            <div className='imagesBottom'>
+            <div>
             <div className='imagesLeft'>
                 {this.state.isLiked ? <i onClick={this.toggleLike} className="fas fa-heart"></i> :
             <i onClick={this.toggleLike} className="far fa-heart" ></i>} 

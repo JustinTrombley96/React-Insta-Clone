@@ -32,7 +32,7 @@ const withAuthenticate = PostComp => LoginComp =>
 		};
 
 		signIn = e => {
-			e.preventDefault();
+			// e.preventDefault();
 			localStorage.setItem('user', this.state.usernameText);
 			localStorage.setItem('pass', this.state.passwordText);
 			this.setState({
@@ -44,7 +44,7 @@ const withAuthenticate = PostComp => LoginComp =>
 			if (this.state.loggedIn) {
 				return <PostComp />;
 			} else {
-				return <LoginComp username={this.username} password={this.password} signIn={this.signIn} />;
+				return <PostComp username={this.username} password={this.password} signIn={this.signIn} />;
 			}
 		}
 	};

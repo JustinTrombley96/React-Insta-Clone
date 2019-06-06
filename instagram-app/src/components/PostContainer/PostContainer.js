@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './PostContainer.scss';
 import Post from './Post';
+// import styled from 'styled-components';
+
+// const PContainerStyle = styled.div`
+// 	max-width: 440px;
+// 	display: inline-block;
+// 	margin: 45px auto;
+// 	border: .2px darkgrey solid;
+// `;
 
 class PostContainer extends React.Component {
 	render() {
 		return (
-			<div className='post-container'>
+			<div>
 				{this.props.filteredPosts.length === 0 ? (
 					this.props.data.map(post => {
 						return <Post post={post} />;
