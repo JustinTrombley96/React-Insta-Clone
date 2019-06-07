@@ -44,7 +44,7 @@ const withAuthenticate = PostComp => LoginComp =>
 			if (this.state.loggedIn) {
 				return <PostComp />;
 			} else {
-				return <PostComp username={this.username} password={this.password} signIn={this.signIn} />;
+				return <LoginComp username={this.username} password={this.password} signIn={this.signIn} />;
 			}
 		}
 	};
